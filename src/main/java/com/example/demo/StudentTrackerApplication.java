@@ -27,18 +27,14 @@ public class StudentTrackerApplication {
 			session.beginTransaction();
 
 			//query students
+			Student student = (Student) session.createQuery("from Student s where s.lastName = 'Verdi'").list().get(0);
+
+			student.setLastName("Bianchi");
+
 			List<Student> theStudents = session.createQuery("from Student").list();
-
 			displayStudents(theStudents);
 
-			//query students: lastName='Rossi'
-			System.out.println("\nStudents who have last name of Rossi");
-			theStudents = session.createQuery("from Student s where s.lastName='Rossi'").list();
-			displayStudents(theStudents);
-
-			//commit transaction
 			session.getTransaction().commit();
-
 			System.out.println("Done!");
 		} finally {
 			factory.close();
