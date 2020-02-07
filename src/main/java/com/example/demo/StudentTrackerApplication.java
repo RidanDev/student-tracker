@@ -27,9 +27,9 @@ public class StudentTrackerApplication {
 			session.beginTransaction();
 
 			//query students
-			Student student = (Student) session.createQuery("from Student s where s.lastName = 'Verdi'").list().get(0);
+			Student student = session.get(Student.class, 10);
 
-			student.setLastName("Bianchi");
+			student.setLastName("Verdi");
 
 			List<Student> theStudents = session.createQuery("from Student").list();
 			displayStudents(theStudents);
