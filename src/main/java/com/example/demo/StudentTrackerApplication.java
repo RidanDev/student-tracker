@@ -26,12 +26,14 @@ public class StudentTrackerApplication {
 		try {
 			session.beginTransaction();
 
-			//query students
+			List<Student> theStudents = session.createQuery("from Student").list();
+			displayStudents(theStudents);
+
 			Student student = session.get(Student.class, 10);
 
-			student.setLastName("Verdi");
+			session.delete(student);
 
-			List<Student> theStudents = session.createQuery("from Student").list();
+			theStudents = session.createQuery("from Student").list();
 			displayStudents(theStudents);
 
 			session.getTransaction().commit();
