@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 public class TestJdbc {
 
     public static void main(String[] args) {
-        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/hb-04-one-to-many-uni?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/hb-05-many-to-many?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "root";
         String pass = "root";
 
